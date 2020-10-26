@@ -1,0 +1,70 @@
+annonce_homepage:
+    path:     /oussama
+    defaults: { _controller: AnnonceBundle:Default:index }
+annonce_page1:
+    path:     /homeAnnonce
+    defaults: { _controller: AnnonceBundle:Annonce:AjouterAnnonce}
+annonce_Affichage:
+    path:     /AffichageAnnonce
+    defaults: { _controller: AnnonceBundle:Annonce:read1}
+delete_annonce:
+    path: /delete/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:delete }
+update_annonce:
+    path: /modifier/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:modifier }
+homeAdmin:
+    path: /homeAdmin
+    defaults: { _controller: AnnonceBundle:Annonce:homeAdmin }
+
+AnnonceClient:
+    path: /AnnonceClient
+    defaults: { _controller: AnnonceBundle:Annonce:AnnonceClient }
+
+
+Ajoutercategorie:
+        path: /Ajoutercategorie
+        defaults: { _controller: AnnonceBundle:Annonce:AjouterCategorie }
+
+AfficherCategorie:
+    path: /Affichercategorie/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:afficherCategorie }
+participer:
+    path: /participer/{idCategorie}
+    defaults: { _controller: AnnonceBundle:Annonce:participer }
+affichertous:
+    path: /affichertous
+    defaults: { _controller: AnnonceBundle:Annonce:affichertous }
+show:
+    path: /show/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:show }
+deletecategorie:
+    path: /deletecategorie/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:deletecategorie }
+showUser:
+    path: /showUser/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:showUser }
+chart:
+    path: /chart
+    defaults: { _controller: AnnonceBundle:State:State }
+pie:
+    path: /pie
+    defaults: { _controller: AnnonceBundle:State:pie }
+Annonceparticiper:
+    path: /Annonceparticiper
+    defaults: { _controller: AnnonceBundle:Annonce:Annonceparticiper }
+
+annuler:
+    path: /annuler/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:annuler }
+favoriser:
+    path: /favoriser
+    defaults: { _controller: AnnonceBundle:Annonce:favoriser }
+
+adore:
+    path: /adore/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:adore }
+
+showlesjaime:
+    path: /showlesjaime/{id}
+    defaults: { _controller: AnnonceBundle:Annonce:showlesjaime }

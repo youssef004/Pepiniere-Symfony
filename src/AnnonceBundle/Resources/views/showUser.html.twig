@@ -1,0 +1,76 @@
+
+{% extends 'base1.html.twig' %}
+
+{% block content %}
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Affichage Annonce
+            </h3>
+
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>nom</th>
+                    <th>prenom</th>
+                    <th>email</th>
+                    <th>username</th>
+
+
+
+                </tr>
+                </thead>
+                {% for i in list %}
+                <tbody>
+
+                    <tr>
+                        <td>
+                            {{ i.nom }}
+                        </td>
+                        <td>{{ i.prenom }}</td>
+                        <td>{{ i.email }}</td>
+                        <td>{{ i.username }}</td>
+
+
+                    </tr>
+
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br><br>
+        <br>
+        <br><br>  <br>
+        <br>
+        <br><br>
+        <br>
+        <br><br>
+        <br>
+        <br><br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+
+
+{% endblock %}

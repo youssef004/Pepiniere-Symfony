@@ -1,0 +1,70 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Les Annonce</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Les Annonce</a></li>
+                        <li class="breadcrumb-item active">fresia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <div class="about-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid"  src="{{ asset('/integration/public/uploads/')~annonce.imageName}}" alt="">
+                    </div>
+                </div>
+
+
+        <div class="col-lg-6">
+            <div class="mask-icon">
+                <ul>
+                    {% for i in categories %}
+
+                    <li><a href="{{ path('participer',{'idCategorie':i.getIdCategorieAnnonce()}) }}" data-toggle="tooltip" data-placement="right" title="participer"><i class="fas fa-file-signature"></i></a></li>
+                    <li><a href="{{ path('adore',{'id':annonce.Id}) }}" data-toggle="tooltip" data-placement="right" title="intersse"><i class="far fa-heart"></i></a></li>
+
+                </ul>
+
+            </div>
+                    <h2 class="noo-sh-title-top"> <span>{{annonce.Titre}}</span></h2>
+
+                    <p>
+                        {{ i.Type }}<br>
+                        {{ annonce.Description }}
+
+                    </p>
+                <i class="fas fa-table"></i>{{ i.DateDebut|date }} <br>
+                <i class="fas fa-table"></i>{{ i.Datefin|date }}
+            {% endfor %}
+                    <p></p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br>
+
+
+{% endblock %}

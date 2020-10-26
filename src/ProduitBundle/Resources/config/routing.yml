@@ -1,0 +1,81 @@
+produit_homepage:
+    path:     /homeP
+    defaults: { _controller: ProduitBundle:Default:index }
+authentification:
+    path:     /home
+    defaults: { _controller: ProduitBundle:Produit:affichage }
+homeAdmine:
+    path:     /homeAdmine
+    defaults: { _controller: ProduitBundle:Produit:affichage1 }
+create:
+    path:     /addProd
+    defaults: { _controller: ProduitBundle:Produit:create }
+createCateg:
+    path:     /addCateg
+    defaults: { _controller: ProduitBundle:Produit:createCateg }
+showProd:
+    path:     /showProd
+    defaults: { _controller: ProduitBundle:Produit:showProduit }
+showProdClient:
+    path:     /showProdClient
+    defaults: { _controller: ProduitBundle:Produit:showProduitClient }
+showCategProd:
+    path:     /showCategProd
+    defaults: { _controller: ProduitBundle:Produit:showCategoryProduit }
+showHistoryProd:
+    path:     /HistoryProd
+    defaults: { _controller: ProduitBundle:Produit:showHistoryProduit }
+showStockProd:
+    path:     /StockProd
+    defaults: { _controller: ProduitBundle:Produit:showStockProduit }
+showHighPrice:
+    path:     /highPrice
+    defaults: { _controller: ProduitBundle:Produit:high }
+showLowPrice:
+    path:     /lowPrice
+    defaults: { _controller: ProduitBundle:Produit:low }
+showMap:
+    path:     /ShowMap
+    defaults: { _controller: ProduitBundle:Produit:showMapProduit }
+prod_delete:
+    path:     /delete/{IdProduit}
+    defaults: { _controller: ProduitBundle:Produit:annuler }
+prod_deleteTotal:
+    path:     /deleteAll/{IdProduit}
+    defaults: { _controller: ProduitBundle:Produit:deleteProd }
+Categprod_delete:
+    path:     /deleteCateg/{IdCategoryProd}
+    defaults: { _controller: ProduitBundle:Produit:deleteCategProd }
+prod_update:
+    path:     /update/{IdProduit}
+    defaults: { _controller: ProduitBundle:Produit:updateProd }
+count:
+    path:     /Count
+    defaults: { _controller: ProduitBundle:Produit:Count }
+addlikes:
+    path:     /likes
+    defaults: { _controller: ProduitBundle:Produit:AddUtil }
+dislikes:
+    path:     /dislikes/{id}
+    defaults: { _controller: ProduitBundle:Produit:AddInutil }
+logMobile:
+    path:     /logMobile/{email}
+    defaults: { _controller: ProduitBundle:ProduitMobile:LoginMobile }
+showProdMobile:
+    path:     /showProdMobile
+    defaults: { _controller: ProduitBundle:ProduitMobile:showProdMobile }
+showCategProdMobile:
+    path:     /showCategMobile/{id}
+    defaults: { _controller: ProduitBundle:ProduitMobile:showCategProdMobile }
+highPriceMobile:
+    path:     /highPriceMobile
+    defaults: { _controller: ProduitBundle:ProduitMobile:highPriceMobile }
+deleteProdMobile:
+    path:     /deleteProdMobile/{IdProduit}
+    defaults: { _controller: ProduitBundle:ProduitMobile:deleteProdMobile }
+AjouterCompteMobile:
+    path:     /Ajou
+    defaults: { _controller: ProduitBundle:ProduitMobile:AjouterCompteMobile}
+jaimeProd:
+    path:     /jaime
+    defaults: { _controller: ProduitBundle:ProduitMobile:jaimemobile}

@@ -1,0 +1,76 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>favoriser </h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">meilleur annonce</a></li>
+                        <li class="breadcrumb-item active">fresia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for i in annonces  %}
+
+    <div class="box-add-products">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="offer-box-products">
+                        <a href="{{ path('AfficherCategorie',{'id':i.Id}) }}">
+                        <img class="img-fluid"  src="{{ asset('/integration/public/uploads/')~i.imageName}}" alt="">
+                        </a>
+                    </div>
+                </div>
+
+
+
+               <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="offer-box-products">
+                        <div class="contact-info-left">
+                            <h2>
+                                {{ i.titre }}
+                            </h2>
+                            <p> {{ i.Description }}</p>
+                                <ul>
+                                <li>
+                                    <br><br>
+                                </li>
+                                <li>
+                                    <br><br>
+                                    <p><i class="fas fa-table"></i>{{ i.DateAnnonce|date('y/m/d') }}</p>
+                                </li>
+                                    <a href="{{ path('AfficherCategorie',{'id':i.Id}) }}">
+                                        <button class="btn hvr-hover disabled" id="submit" type="submit" style="pointer-events: all; cursor: pointer;">Read more</button>
+                                    </a>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

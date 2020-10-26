@@ -1,0 +1,63 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ asset('reg/fonts/material-icon/css/material-design-iconic-font.min.css')  }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ asset('reg/css/style.css')  }}">
+</head>
+<body>
+
+<div class="main">
+
+    <section class="signup">
+        <!-- <img src="{{ asset('reg/images/abc.jpg')  }}" alt=""> -->
+
+        <div class="container">
+            <div class="signup-content">
+                <form action=" {{ path('fos_user_registration_register') }}" method="POST" id="signup-form" class="signup-form">
+                    <div class="form-group" id="fos_user_registration_form"></div>
+                    <h2 class="form-title">Create account</h2>
+                    <div class="form-group">
+                        {{ form_widget(form.username, { 'attr': {'class': 'form-input', 'placeholder': 'User Name','type':'text','name':'name','id':'name' } }) }}                    </div>
+                    <div class="form-group">
+                        {{ form_widget(form.email, { 'attr': {'class': 'form-input', 'placeholder': 'Your Email','type':'email','name':'email','id':'email' } }) }}                    </div>
+                    <div class="form-group">
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-input', 'placeholder': 'Password','type':'text','name':'password','id':'password' } }) }}
+
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-input', 'placeholder': 'Repeat your password','type':'password','name':'re_password','id':'re_password' } }) }}
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit"  value="{{ 'registration.submit'|trans }}"/>
+                    </div>
+                </form>
+                <p class="loginhere">
+                    Have already an account ? <a href="{{path ("fos_user_security_login")}}" class="loginhere-link">Login here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- JS -->
+<script src="{{ asset('reg/vendor/jquery/jquery.min.js')  }}"></script>
+<script src="{{ asset('reg/js/main.js')  }}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

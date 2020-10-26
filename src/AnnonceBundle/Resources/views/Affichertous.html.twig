@@ -1,0 +1,103 @@
+{% extends 'base1.html.twig' %}
+{% block content %}
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("recherche");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("recherchetable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">
+                Affichage categorie
+            </h3>
+
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search" id="recherche" onkeyup="myFunction()">
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-bordered table-striped" id="recherchetable">
+                <thead>
+                <tr>
+                    <th>type</th>
+                    <th>date_debut</th>
+                    <th>date_fin</th>
+                    <th>nbr participant</th>
+                    <th>show Annonce</th>
+                    <th>delete</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                    {% for i in categorie %}
+                    <tr>
+
+                        <td>{{ i.Type}}</td>
+                        <td>{{i.DateDebut|date('Y-m-d') }} </td>
+                        <td>{{i.Datefin |date('Y-m-d')}}</td>
+                        <td> {{i.nbrParticipant}}
+                            <td>   <a href="{{ path('show',{'id':i.getIdCategorieAnnonce()}) }}">
+                                <button type="button" class="btn btn-primary" >
+                                    <i class="fas fa-angle-double-right"></i> show
+                                </button>
+                            </a></td>
+
+
+
+                        <td>
+                            <a href="{{ path('deletecategorie',{'id':i.getIdCategorieAnnonce()}) }}">
+                                <button type="button" class="btn btn-primary">
+                                    <i class="fas fa-minus-circle"></i>supprimer
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+            <div class="pagination pagination-sm m-0 float-right ">
+                {{ knp_pagination_render(categorie) }}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+
+
+{% endblock %}
